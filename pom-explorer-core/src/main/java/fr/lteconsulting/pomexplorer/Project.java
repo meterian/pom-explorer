@@ -246,7 +246,7 @@ public class Project
 					String type = interpolateValue( d.getType(), projects, log );
 
 					Gav dependencyGav = new Gav( groupId, artifactId, version );
-					Dependency dependency = new Dependency( dependencyGav, scope, classifier, type );
+					Dependency dependency = new Dependency( dependencyGav, scope, classifier, type,  Boolean.valueOf(d.getOptional()));
 
 					dependencyManagement.put( dependency.key(), dependency );
 				}
@@ -277,7 +277,7 @@ public class Project
 				String classifier = interpolateValue( d.getClassifier(), projects, log );
 				String type = interpolateValue( d.getType(), projects, log );
 
-				dependencies.add( new Dependency( new Gav( groupId, artifactId, version ), scope, classifier, type ) );
+				dependencies.add( new Dependency( new Gav( groupId, artifactId, version ), scope, classifier, type, Boolean.valueOf(d.getOptional()) ) );
 			}
 		}
 		return dependencies;

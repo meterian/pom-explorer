@@ -20,7 +20,7 @@ public class ProjectTools
 		{
 			sb.append( "<div><div>dependencies</div><div>" );
 			mavenProject.getDependencies().stream()
-					.map( d -> new Dependency( d.getGroupId(), d.getArtifactId(), d.getVersion(), Scope.fromString( d.getScope() ), d.getClassifier(), d.getType() ) )
+					.map( d -> new Dependency( d.getGroupId(), d.getArtifactId(), d.getVersion(), Scope.fromString( d.getScope() ), d.getClassifier(), d.getType() , Boolean.valueOf(d.getOptional())) )
 					.sorted( Dependency.alphabeticalComparator ).forEach( dependency -> {
 						showDependency( project, dependency, sb, projects, log );
 						sb.append( "<br/>" );
@@ -36,7 +36,7 @@ public class ProjectTools
 		{
 			sb.append( "<div><div>dependency management</div><div>" );
 			mavenProject.getDependencyManagement().getDependencies().stream()
-					.map( d -> new Dependency( d.getGroupId(), d.getArtifactId(), d.getVersion(), Scope.fromString( d.getScope() ), d.getClassifier(), d.getType() ) )
+					.map( d -> new Dependency( d.getGroupId(), d.getArtifactId(), d.getVersion(), Scope.fromString( d.getScope() ), d.getClassifier(), d.getType() , Boolean.valueOf(d.getOptional())) )
 					.sorted( Dependency.alphabeticalComparator )
 					.forEach( dependency -> {
 						showDependency( project, dependency, sb, projects, log );

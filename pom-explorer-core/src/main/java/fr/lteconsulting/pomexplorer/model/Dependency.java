@@ -12,22 +12,23 @@ public class Dependency
 	private final Scope scope;
 	private final String classifier;
 	private final String type;
+	private final Boolean optional;
 
 	private DependencyKey key;
 
 	public static final Comparator<Dependency> alphabeticalComparator = ( a, b ) -> a.toString().compareTo( b.toString() );
 
-	public Dependency( Gav gav, Scope scope, String classifier, String type )
+	public Dependency( Gav gav, Scope scope, String classifier, String type , Boolean optional)
 	{
-		this( gav.getGroupId(), gav.getArtifactId(), gav.getVersion(), scope, classifier, type );
+		this( gav.getGroupId(), gav.getArtifactId(), gav.getVersion(), scope, classifier, type , optional);
 	}
 
 	public Dependency( DependencyKey key, Scope scope, String version )
 	{
-		this( key.getGroupId(), key.getArtifactId(), version, scope, key.getClassifier(), key.getType() );
+		this( key.getGroupId(), key.getArtifactId(), version, scope, key.getClassifier(), key.getType(), false );
 	}
 
-	public Dependency( String groupId, String artifactId, String version, Scope scope, String classifier, String type )
+	public Dependency(String groupId, String artifactId, String version, Scope scope, String classifier, String type , Boolean optional)
 	{
 		this.groupId = groupId;
 		this.artifactId = artifactId;
@@ -35,6 +36,7 @@ public class Dependency
 		this.scope = scope == null ? Scope.COMPILE : scope;
 		this.classifier = classifier;
 		this.type = type == null ? "jar" : type;
+		this.optional = optional;
 	}
 
 	public DependencyKey key()
@@ -84,6 +86,10 @@ public class Dependency
 		return type;
 	}
 
+	public Boolean getOptional() {
+		return optional;
+	}
+
 	@Override
 	public String toString()
 	{
@@ -107,6 +113,7 @@ public class Dependency
 		result = prime * result + ((scope == null) ? 0 : scope.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((version == null) ? 0 : version.hashCode());
+		result = prime * result + ((optional == null) ? 0 : optional.hashCode());
 		return result;
 	}
 
@@ -163,6 +170,13 @@ public class Dependency
 				return false;
 		}
 		else if( !version.equals( other.version ) )
+			return false;
+		if( optional == null )
+		{
+			if( other.optional != null )
+				return false;
+		}
+		else if( !optional.equals( other.optional ) )
 			return false;
 		return true;
 	}
