@@ -1,6 +1,8 @@
 # pom-explorer
 
 [![Build Status](https://travis-ci.org/ltearno/pom-explorer.svg?branch=master)](https://travis-ci.org/ltearno/pom-explorer)
+[![security status](https://www.meterian.com/badge/gh/meterian/pom-explorer/security)](https://www.meterian.com/report/gh/meterian/pom-explorer)
+[![stability status](https://www.meterian.com/badge/gh/meterian/pom-explorer/stability)](https://www.meterian.com/report/gh/meterian/pom-explorer)
 
 The Maven's swiss knife
 
