@@ -1,8 +1,8 @@
 # pom-explorer
 
 [![Build Status](https://travis-ci.org/ltearno/pom-explorer.svg?branch=master)](https://travis-ci.org/ltearno/pom-explorer)
-[![security status](https://www.meterian.com/badge/gh/meterian/pom-explorer/security)](https://www.meterian.com/report/gh/meterian/pom-explorer)
-[![stability status](https://www.meterian.com/badge/gh/meterian/pom-explorer/stability)](https://www.meterian.com/report/gh/meterian/pom-explorer)
+[![security status](https://www.meterian.com/badge/gh/ltearno/pom-explorer/security)](https://www.meterian.com/report/gh/ltearno/pom-explorer)
+[![stability status](https://www.meterian.com/badge/gh/ltearno/pom-explorer/stability)](https://www.meterian.com/report/gh/ltearno/pom-explorer)
 
 The Maven's swiss knife
 
@@ -29,7 +29,7 @@ Main functions :
 
 This project is in active development and serves also as a platform to work on useful use cases that can manifest. It is used to manage the versions, connections and dependencies of 43 projects. If you have ideas or anything like that, don't hesitate to write a pull request.
 
-This project is certainly not production ready nor really user-friendly. That's because the functionality set is not well defined yet. So any feature you need related to your pom dependency graph could be added in the feature list and will maybe impact the final architecture. So that is certainly the moment for you to say what you need in this project ! 
+This project is certainly not production ready nor really user-friendly. That's because the functionality set is not well defined yet. So any feature you need related to your pom dependency graph could be added in the feature list and will maybe impact the final architecture. So that is certainly the moment for you to say what you need in this project !
 
 ## Build and run
 
@@ -40,7 +40,7 @@ To build :
 To run :
 
 	java -jar pom-explorer/target/pom-explorer.jar
-	
+
 Then go with your browser on this address
 
 	http://localhost:8090
@@ -149,26 +149,26 @@ This will launch the analyze. When finished, the results will be displayed :
 	io.undertow:undertow-servlet:1.2.6.Final
 	junit:junit:3.8.1
 	org.imgscalr:imgscalr-lib:4.2
-	
+
 	Java classes provided by gav com.google.code.gson:gson:2.3.1 :
 	resolved file : C:\Users\Arnaud\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar
 	165 provided classes, use -v option to display them
-	
+
 	Java classes provided by gav org.imgscalr:imgscalr-lib:4.2 :
 	resolved file : C:\Users\Arnaud\.m2\repository\org\imgscalr\imgscalr-lib\4.2\imgscalr-lib-4.2.jar
 	22 provided classes, use -v option to display them
-	
+
 	Java classes provided by gav io.undertow:undertow-servlet:1.2.6.Final :
 	resolved file : C:\Users\Arnaud\.m2\repository\io\undertow\undertow-servlet\1.2.6.Final\undertow-servlet-1.2.6.Final.jar
 	244 provided classes, use -v option to display them
-	
+
 	Java classes provided by gav junit:junit:3.8.1 :
 	resolved file : C:\Users\Arnaud\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar
 	100 provided classes, use -v option to display them
-	
+
 	Java classes provided by gav fr.lteconsulting:carousel:1.0-SNAPSHOT :
 	resolved file : C:\Users\Arnaud\.m2\repository\fr\lteconsulting\carousel\1.0-SNAPSHOT\carousel-1.0-SNAPSHOT.jar
-	
+
 	Analyzing referenced fqns of the project 'C:\documents\repos\carousel\pom.xml'
 	Use the -v option to display the list of referenced fqns.
 	processing parsing java directory : C:\documents\repos\carousel\src
@@ -176,8 +176,8 @@ This will launch the analyze. When finished, the results will be displayed :
 	Also it does not detect references made to inner classes (that can be fixed) and through reflection (cannot be fixed), like Class.forName(...) calls.
 	Feel free to submit a pull request !
 	finished : 18 directories traversed, 7 java files parsed
-	
-	
+
+
 	Referenced FQNs without a provider (may include false positives, or internally defined fqns):
 	5 not provided references found
 	FileChannel.MapMode
@@ -185,13 +185,13 @@ This will launch the analyze. When finished, the results will be displayed :
 	com.google.gwt.dom.client.Element
 	com.google.gwt.user.client.DOM
 	fr.lteconsulting.tarditest.client.templates.TemplateRuntime
-	
+
 	GAV declared in project's hierarchy dependencies but not referenced in the project's sources (may include false positives like imported or module poms):
 	0 declared but not used GAVs
-	
+
 	Referenced FQNs from transitive dependencies :
 	0 referenced transitive dependencies GAV
-	
+
 	GAV declared directly in the project's dependencies but not referenced in the project's sources (may include false positives like imported or module poms):
 	3 declared but not used GAVs
 	com.google.code.gson:gson:2.3.1 (provides 165 classes)
@@ -244,7 +244,7 @@ The last section displays the dependencies that are declared in the project's po
 
 ...
 
-### Releasing 
+### Releasing
 
 ...
 
